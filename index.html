@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soudeep Mazumder | Data Analyst Portfolio</title>
+    <meta name="description" content="Portfolio of Soudeep Mazumder - B.Tech CSE Student & Data Analyst">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Markdown Parser for AI Responses -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#2563eb', // Blue 600
+                        secondary: '#1e293b', // Slate 800
+                        accent: '#eff6ff', // Blue 50
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+        }
+        /* Chat Widget Animations */
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .chat-slide-in {
+            animation: slideIn 0.3s ease-out forwards;
+        }
+        .typing-dot {
+            animation: typing 1.4s infinite ease-in-out both;
+        }
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes typing {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+        /* Custom Scrollbar for Chat */
+        .chat-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        .chat-scroll::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .chat-scroll::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-600 bg-slate-50 antialiased selection:bg-blue-200 selection:text-blue-900 relative">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-sm border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="font-bold text-xl text-slate-800">SM<span class="text-primary">.</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-slate-600 hover:text-primary transition-colors font-medium">About</a>
+                    <a href="#ai-match" class="text-slate-600 hover:text-primary transition-colors font-medium"><i class="fas fa-sparkles text-yellow-500 mr-1"></i>AI Match</a>
+                    <a href="#skills" class="text-slate-600 hover:text-primary transition-colors font-medium">Skills</a>
+                    <a href="#projects" class="text-slate-600 hover:text-primary transition-colors font-medium">Projects</a>
+                    <a href="#experience" class="text-slate-600 hover:text-primary transition-colors font-medium">Experience</a>
+                    <a href="#education" class="text-slate-600 hover:text-primary transition-colors font-medium">Education</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="about" class="pt-32 pb-20 lg:pt-48 lg:pb-32 gradient-bg overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
+                <div class="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-8 lg:text-left">
+                    <div class="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-sm font-semibold mb-6">
+                        <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
+                        Available for Roles
+                    </div>
+                    <h1 class="text-4xl tracking-tight font-extrabold text-slate-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
+                        Hi, I'm <span class="text-primary">Soudeep Mazumder</span>
+                    </h1>
+                    <p class="mt-4 text-lg text-slate-600 leading-relaxed md:mt-6">
+                        A detail-oriented <span class="font-semibold text-slate-800">B.Tech CSE Student</span> seeking precision-focused data validation roles. I specialize in turning raw data into actionable insights using Python, SQL, and Dashboarding tools.
+                    </p>
+                    
+                    <div class="mt-8 flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-4">
+                        <a href="#projects" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-primary hover:bg-blue-700 transition-shadow shadow-lg hover:shadow-xl">
+                            View Projects
+                        </a>
+                        <div class="flex items-center justify-center space-x-6 sm:ml-4 mt-4 sm:mt-0">
+                            <a href="#" target="_blank" class="text-slate-400 hover:text-slate-800 transition-colors text-2xl">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" target="_blank" class="text-slate-400 hover:text-blue-700 transition-colors text-2xl">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="mailto:soudeepmazumder2004@gmail.com" class="text-slate-400 hover:text-red-600 transition-colors text-2xl">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="mt-10 grid grid-cols-2 gap-x-4 gap-y-4 sm:flex sm:justify-center lg:justify-start text-sm text-slate-500">
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-primary mr-2"></i> West Bengal, India
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone-alt text-primary mr-2"></i> +91 9051432101
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hero Visual/Avatar -->
+                <div class="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-4 lg:flex lg:items-center">
+                    <div class="relative mx-auto w-full rounded-2xl shadow-2xl lg:max-w-md overflow-hidden bg-white p-2">
+                        <!-- Placeholder for your photo -->
+                        <div class="bg-gradient-to-br from-blue-100 to-slate-100 aspect-[4/5] rounded-xl flex items-center justify-center relative overflow-hidden group">
+                           <i class="fas fa-user-graduate text-9xl text-blue-200 group-hover:scale-110 transition-transform duration-500"></i>
+                           <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/50 to-transparent">
+                                <p class="text-white font-medium">CSE Undergraduate</p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ✨ New AI Feature: Role Fit Matcher -->
+    <section id="ai-match" class="py-12 bg-white border-y border-slate-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 md:p-8 shadow-sm border border-blue-100">
+                <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-6">
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 flex items-center">
+                            <i class="fas fa-sparkles text-yellow-500 mr-2 animate-pulse-slow"></i> 
+                            Recruiter Matcher
+                        </h2>
+                        <p class="text-slate-600 text-sm mt-1">
+                            Type a job title below, and my AI will analyze my profile to explain why I'm a good fit.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                    <input type="text" id="roleInput" placeholder="e.g., Junior Data Analyst, SQL Developer..." 
+                        class="flex-1 px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm">
+                    <button onclick="analyzeRoleFit()" id="analyzeBtn"
+                        class="px-6 py-3 bg-slate-900 text-white font-medium rounded-lg hover:bg-slate-800 transition-colors shadow-lg flex items-center justify-center min-w-[140px]">
+                        <span id="analyzeBtnText">✨ Analyze Fit</span>
+                        <div id="analyzeLoader" class="hidden flex space-x-1 ml-2">
+                            <div class="w-2 h-2 bg-white rounded-full typing-dot"></div>
+                            <div class="w-2 h-2 bg-white rounded-full typing-dot"></div>
+                            <div class="w-2 h-2 bg-white rounded-full typing-dot"></div>
+                        </div>
+                    </button>
+                </div>
+
+                <div id="roleResult" class="hidden">
+                    <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
+                        <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Why I fit this role:
+                        </h3>
+                        <div id="roleContent" class="prose prose-sm prose-slate max-w-none text-slate-600">
+                            <!-- AI Content will go here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900">Technical Expertise</h2>
+                <p class="mt-4 text-slate-600 max-w-2xl mx-auto">Tools and technologies I use to analyze data and build solutions.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Data Analysis -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 text-blue-600">
+                        <i class="fas fa-chart-line text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Data Analysis</h3>
+                    <p class="text-slate-500 mb-4 text-sm">Extracting insights from complex datasets.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-medium text-slate-700">Python</span>
+                        <span class="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-medium text-slate-700">Pandas</span>
+                        <span class="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-medium text-slate-700">NumPy</span>
+                        <span class="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-medium text-slate-700">Statistics</span>
+                    </div>
+                </div>
+
+                <!-- Data Engineering -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 text-green-600">
+                        <i class="fas fa-database text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Data Engineering</h3>
+                    <p class="text-slate-500 mb-4 text-sm">Building pipelines and managing data flow.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-medium text-slate-700">SQL</span>
+                        <span class="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-medium text-slate-700">ETL Pipelines</span>
+                        <span class="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-medium text-slate-700">Data Wrangling</span>
+                        <span class="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-medium text-slate-700">Web Scraping</span>
+                    </div>
+                </div>
+
+                <!-- Visualization & Web -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 text-purple-600">
+                        <i class="fas fa-desktop text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Visualization & Web</h3>
+                    <p class="text-slate-500 mb-4 text-sm">Presenting data in an understandable way.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-medium text-slate-700">Excel</span>
+                        <span class="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-medium text-slate-700">Dashboards</span>
+                        <span class="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-medium text-slate-700">HTML/CSS</span>
+                        <span class="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-medium text-slate-700">Data Viz</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900">Featured Projects</h2>
+                <p class="mt-4 text-slate-600">Applying skills to solve real-world problems.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-shadow">
+                    <div class="md:flex">
+                        <div class="md:w-1/3 bg-slate-800 flex items-center justify-center p-8">
+                            <i class="fas fa-bicycle text-6xl text-slate-400"></i>
+                        </div>
+                        <div class="p-8 md:w-2/3">
+                            <div class="uppercase tracking-wide text-sm text-primary font-semibold">Data Analysis</div>
+                            <h3 class="block mt-1 text-2xl leading-tight font-bold text-black">Bike Sales Dashboard</h3>
+                            <p class="mt-2 text-slate-500 text-sm">Oct 2025 - Nov 2025</p> 
+                            
+                            <p class="mt-4 text-slate-600">
+                                Built an interactive dashboard using Pivot Tables, Pivot Charts, and Slicers to visualize bike purchase trends.
+                            </p>
+                            
+                            <ul class="mt-4 space-y-2">
+                                <li class="flex items-start text-slate-600 text-sm">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Performed data cleaning, preprocessing, and analysis to identify insights across income, region, and age groups.</span>
+                                </li>
+                                <li class="flex items-start text-slate-600 text-sm">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Designed a user-friendly reporting layout to highlight customer behavior and sales patterns.</span>
+                                </li>
+                            </ul>
+
+                            <div class="mt-6">
+                                <span class="inline-block bg-slate-100 rounded-full px-3 py-1 text-xs font-semibold text-slate-600 mr-2">Excel</span>
+                                <span class="inline-block bg-slate-100 rounded-full px-3 py-1 text-xs font-semibold text-slate-600 mr-2">Pivot Tables</span>
+                                <span class="inline-block bg-slate-100 rounded-full px-3 py-1 text-xs font-semibold text-slate-600 mr-2">Data Cleaning</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Leadership -->
+    <section id="experience" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-slate-900 mb-12 text-center">Leadership & Achievements</h2>
+            
+            <div class="relative border-l-2 border-slate-200 ml-3 md:ml-6 space-y-12">
+                <!-- GDG Role -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary border-4 border-white shadow-sm"></div>
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2">
+                        <h3 class="text-xl font-bold text-slate-900">Co-Organizer</h3>
+                        <span class="text-sm font-medium text-slate-500">Sep 2024 - Aug 2025</span>
+                    </div>
+                    <div class="text-lg font-medium text-primary mb-2">Google Developer Groups (GDG) - On Campus GCETTB</div>
+                    <p class="text-slate-600 mb-3">
+                        Coordinated tech events, workshops, and developer meetups, ensuring smooth execution and community engagement.
+                    </p>
+                    <ul class="list-disc list-inside text-slate-600 text-sm space-y-1">
+                        <li>Contributed to event planning, outreach, and content strategies.</li>
+                        <li>Strengthened community growth and enhanced developer-focused initiatives.</li>
+                    </ul>
+                </div>
+
+                <!-- Class Rep Role -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-300 border-4 border-white shadow-sm"></div>
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2">
+                        <h3 class="text-xl font-bold text-slate-900">Class Representative</h3>
+                        <span class="text-sm font-medium text-slate-500">Nov 2022 - Present</span>
+                    </div>
+                    <div class="text-lg font-medium text-primary mb-2">GCETTB</div>
+                    <p class="text-slate-600 mb-3">
+                        Selected as Class Representative since first year.
+                    </p>
+                    <ul class="list-disc list-inside text-slate-600 text-sm space-y-1">
+                        <li>Efficiently managed academic coordination and student communication.</li>
+                        <li>Handled college-related responsibilities while consistently proving to be the best fit for the role.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-slate-900 mb-12 text-center">Education</h2>
+
+            <div class="space-y-6">
+                <!-- B.Tech -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                    <div class="flex flex-col md:flex-row justify-between md:items-center mb-4">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900">B.Tech in Computer Science & Engineering</h3>
+                            <p class="text-primary">Govt. College of Engineering & Textile Technology, Berhampore</p>
+                        </div>
+                        <div class="text-slate-500 text-sm mt-2 md:mt-0 font-medium bg-slate-100 px-3 py-1 rounded-full w-fit">
+                            Nov 2022 - Jun 2026
+                        </div>
+                    </div>
+                    <ul class="list-disc list-inside text-slate-600 text-sm space-y-2">
+                        <li>Completed academic projects involving data analysis and dataset cleaning.</li>
+                        <li>Strong fundamentals in OS, Networks, and Data Structures.</li>
+                        <li>Basic knowledge of web development (HTML, CSS, JS).</li>
+                    </ul>
+                </div>
+
+                <!-- High School -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                    <div class="flex flex-col md:flex-row justify-between md:items-center mb-4">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900">Higher Secondary (WBCHSE)</h3>
+                            <p class="text-primary">Hooghly Collegiate School</p>
+                        </div>
+                        <div class="text-slate-500 text-sm mt-2 md:mt-0 font-medium bg-slate-100 px-3 py-1 rounded-full w-fit">
+                            Sep 2020 - Feb 2022
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm mb-2">Completed with Maths, Physics, Chemistry, Biology, English, Bengali.</p>
+                    <div class="inline-flex items-center px-3 py-1 rounded-full bg-green-100 text-green-800 text-xs font-bold">
+                        <i class="fas fa-star mr-1"></i> Scored 100/100 in Mathematics (10th & 12th)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900">Get In Touch</h2>
+                <p class="mt-4 text-slate-600">Have a project in mind or just want to say hi? I'd love to hear from you.</p>
+            </div>
+
+            <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 shadow-sm">
+                <form action="mailto:soudeepmazumder2004@gmail.com" method="POST" enctype="text/plain" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-slate-700 mb-2">Your Name</label>
+                            <input type="text" id="name" name="name" required 
+                                class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-slate-700 mb-2">Your Email</label>
+                            <input type="email" id="email" name="email" required 
+                                class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-slate-700 mb-2">Subject</label>
+                        <input type="text" id="subject" name="subject" required 
+                            class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all">
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-slate-700 mb-2">Message</label>
+                        <textarea id="message" name="message" rows="5" required
+                            class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"></textarea>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" 
+                            class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-lg text-white bg-primary hover:bg-blue-700 transition-shadow shadow-lg hover:shadow-xl">
+                            <i class="fas fa-paper-plane mr-2"></i> Send Message
+                        </button>
+                    </div>
+                    <p class="text-center text-xs text-slate-400 mt-4">
+                        Note: This will open your default email client.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <span class="text-2xl font-bold text-white">SM<span class="text-primary">.</span></span>
+                    <p class="mt-4 text-sm">
+                        Detail Oriented B.Tech CSE Student Seeking Precision-Focused Data Validation Roles.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Interests</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-slate-800 px-3 py-1 rounded-full text-xs">Data Analytics</span>
+                        <span class="bg-slate-800 px-3 py-1 rounded-full text-xs">Cloud Technologies</span>
+                        <span class="bg-slate-800 px-3 py-1 rounded-full text-xs">AI/ML</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><i class="fas fa-envelope mr-2 w-5"></i> soudeepmazumder2004@gmail.com</li>
+                        <li><i class="fas fa-phone mr-2 w-5"></i> +91 9051432101</li>
+                        <li><i class="fas fa-map-marker-alt mr-2 w-5"></i> West Bengal, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 mt-12 pt-8 text-center text-sm">
+                <p>&copy; 2025 Soudeep Mazumder. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ✨ AI Chat Widget -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <!-- Chat Button -->
+        <button id="chatToggle" onclick="toggleChat()" 
+            class="flex items-center justify-center w-14 h-14 bg-primary text-white rounded-full shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-105">
+            <i class="fas fa-robot text-2xl"></i>
+        </button>
+
+        <!-- Chat Window -->
+        <div id="chatWindow" class="hidden flex flex-col w-80 sm:w-96 h-[450px] bg-white rounded-2xl shadow-2xl absolute bottom-16 right-0 border border-slate-200 overflow-hidden chat-slide-in">
+            <!-- Header -->
+            <div class="bg-primary p-4 text-white flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-3">
+                        <i class="fas fa-robot text-sm"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm">Soudeep's AI Assistant</h4>
+                        <span class="text-xs text-blue-100 flex items-center">
+                            <span class="w-2 h-2 bg-green-400 rounded-full mr-1"></span> Online
+                        </span>
+                    </div>
+                </div>
+                <button onclick="toggleChat()" class="text-white/80 hover:text-white">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <!-- Messages Area -->
+            <div id="chatMessages" class="flex-1 p-4 overflow-y-auto bg-slate-50 chat-scroll flex flex-col space-y-4">
+                <!-- Initial Message -->
+                <div class="flex items-start">
+                    <div class="w-8 h-8 rounded-full bg-blue-100 flex-shrink-0 flex items-center justify-center text-primary text-xs mr-2">
+                        AI
+                    </div>
+                    <div class="bg-white p-3 rounded-2xl rounded-tl-none shadow-sm text-sm text-slate-700 border border-slate-100">
+                        Hello! I'm an AI trained on Soudeep's resume. Ask me anything about his projects, skills, or education!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="p-3 bg-white border-t border-slate-100">
+                <div class="flex items-center bg-slate-100 rounded-full px-4 py-2">
+                    <input type="text" id="chatInput" placeholder="Ask a question..." 
+                        class="bg-transparent border-none focus:outline-none text-sm text-slate-700 flex-1"
+                        onkeypress="handleChatEnter(event)">
+                    <button onclick="sendChatMessage()" class="ml-2 text-primary hover:text-blue-700">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gemini Logic -->
+    <script>
+        // Use the empty string to leverage the environment's API key
+        const apiKey = ""; 
+
+        // Resume Data Context for the AI
+        const resumeContext = `
+            PROFILE: Soudeep Mazumder, B.Tech CSE Student, West Bengal India.
+            EMAIL: soudeepmazumder2004@gmail.com
+            PHONE: +919051432101
+            SUMMARY: Detail-oriented student seeking precision-focused data validation roles.
+            EDUCATION:
+            - B.Tech CSE (2022-2026), Govt College of Engineering & Textile Technology Berhampore. Projects in data analysis.
+            - Higher Secondary (2020-2022), Hooghly Collegiate School. Scored 100/100 in Math in 10th and 12th.
+            SKILLS: Python (Pandas, NumPy), SQL, Excel, HTML/CSS, Web Scraping, Data Visualization, Dashboard Building, ETL Pipelines, Data Wrangling, Statistics.
+            PROJECTS:
+            - Bike Sales Dashboard (Excel): Oct 2025. Interactive dashboard with Pivot Tables/Charts/Slicers. Analyzed income, region, commute distance.
+            LEADERSHIP:
+            - Co-Organizer, GDG On Campus GCETTB (2024-2025). Coordinated tech events.
+            - Class Representative (2022-Present).
+            INTERESTS: Data Analytics, Cloud Tech, AI/ML.
+        `;
+
+        // --- GEMINI API HELPER ---
+        async function callGemini(prompt, systemInstruction) {
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+            
+            const payload = {
+                contents: [{ parts: [{ text: prompt }] }],
+                systemInstruction: { parts: [{ text: systemInstruction }] }
+            };
+
+            // Retry logic
+            const delays = [1000, 2000, 4000];
+            for (let i = 0; i <= delays.length; i++) {
+                try {
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    
+                    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                    
+                    const data = await response.json();
+                    return data.candidates[0].content.parts[0].text;
+                } catch (error) {
+                    if (i === delays.length) throw error;
+                    await new Promise(resolve => setTimeout(resolve, delays[i]));
+                }
+            }
+        }
+
+        // --- FEATURE 1: ROLE FIT ANALYZER ---
+        async function analyzeRoleFit() {
+            const role = document.getElementById('roleInput').value.trim();
+            if (!role) return;
+
+            const btnText = document.getElementById('analyzeBtnText');
+            const loader = document.getElementById('analyzeLoader');
+            const resultDiv = document.getElementById('roleResult');
+            const contentDiv = document.getElementById('roleContent');
+
+            // UI Loading State
+            btnText.innerText = "Analyzing...";
+            loader.classList.remove('hidden');
+            resultDiv.classList.add('hidden');
+
+            try {
+                const systemPrompt = `You are a helpful career assistant. Analyze Soudeep's resume data below and explain why he is a good fit for the job title provided by the user.
+                RESUME DATA: ${resumeContext}
+                
+                Instructions:
+                1. Be enthusiastic and professional.
+                2. Provide 3 short, punchy bullet points connecting his specific skills (like SQL, Python, or Math scores) to the role.
+                3. Keep it brief (max 100 words).
+                4. Use Markdown for bolding key skills.`;
+
+                const response = await callGemini(`Analyze fit for role: ${role}`, systemPrompt);
+                
+                // Parse Markdown
+                contentDiv.innerHTML = marked.parse(response);
+                resultDiv.classList.remove('hidden');
+            } catch (error) {
+                alert("Sorry, I couldn't analyze that right now. Please try again.");
+                console.error(error);
+            } finally {
+                btnText.innerText = "✨ Analyze Fit";
+                loader.classList.add('hidden');
+            }
+        }
+
+        // --- FEATURE 2: AI CHATBOT ---
+        function toggleChat() {
+            const chatWindow = document.getElementById('chatWindow');
+            chatWindow.classList.toggle('hidden');
+            if (!chatWindow.classList.contains('hidden')) {
+                document.getElementById('chatInput').focus();
+            }
+        }
+
+        function handleChatEnter(e) {
+            if (e.key === 'Enter') sendChatMessage();
+        }
+
+        async function sendChatMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            const messagesDiv = document.getElementById('chatMessages');
+
+            if (!message) return;
+
+            // Add User Message
+            messagesDiv.innerHTML += `
+                <div class="flex items-start justify-end">
+                    <div class="bg-primary text-white p-3 rounded-2xl rounded-tr-none shadow-sm text-sm max-w-[80%]">
+                        ${message}
+                    </div>
+                </div>
+            `;
+            input.value = '';
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+            // Add Loading Indicator
+            const loadingId = 'loading-' + Date.now();
+            messagesDiv.innerHTML += `
+                <div id="${loadingId}" class="flex items-start">
+                    <div class="w-8 h-8 rounded-full bg-blue-100 flex-shrink-0 flex items-center justify-center text-primary text-xs mr-2">AI</div>
+                    <div class="bg-white p-3 rounded-2xl rounded-tl-none shadow-sm text-sm border border-slate-100 flex space-x-1 items-center">
+                        <div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>
+                        <div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>
+                        <div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>
+                    </div>
+                </div>
+            `;
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+            try {
+                const systemPrompt = `You are Soudeep's personal AI portfolio assistant.
+                RESUME DATA: ${resumeContext}
+                
+                Instructions:
+                1. Answer questions strictly based on the resume data.
+                2. Be friendly, professional, and concise.
+                3. If asked about something not in the resume, say you don't have that info but suggest contacting Soudeep.
+                4. Highlight his key strengths: Math scores (100/100), Python/SQL skills, and leadership.
+                5. Keep responses short (under 50 words) unless asked for detail.`;
+
+                const response = await callGemini(message, systemPrompt);
+                
+                // Remove loading and add AI response
+                document.getElementById(loadingId).remove();
+                messagesDiv.innerHTML += `
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 rounded-full bg-blue-100 flex-shrink-0 flex items-center justify-center text-primary text-xs mr-2">AI</div>
+                        <div class="bg-white p-3 rounded-2xl rounded-tl-none shadow-sm text-sm text-slate-700 border border-slate-100">
+                            ${marked.parse(response)}
+                        </div>
+                    </div>
+                `;
+            } catch (error) {
+                document.getElementById(loadingId).remove();
+                messagesDiv.innerHTML += `
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 rounded-full bg-red-100 flex-shrink-0 flex items-center justify-center text-red-600 text-xs mr-2">!</div>
+                        <div class="bg-white p-3 rounded-2xl rounded-tl-none shadow-sm text-sm text-red-500 border border-slate-100">
+                            Oops! I'm having trouble connecting. Please try again.
+                        </div>
+                    </div>
+                `;
+            }
+            
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+    </script>
+</body>
+</html>
